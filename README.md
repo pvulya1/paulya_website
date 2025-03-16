@@ -1,0 +1,46 @@
+# Paulya Website
+
+This is the official website for Oleg Paulya (Paul Ya), a unique music initiative that ranges from classical to rock music, offering new interpretations of classical pieces with a rock edge.
+
+## Project Structure
+
+```
+index.html
+css/
+    style.css
+images/
+    favicon.png
+    paulya-abstract.png
+    paulya-background.png
+    paulya-collage.png
+    paulya-logo.png
+    paulya-performance.png
+js/
+    main.js
+```
+
+## Features
+
+- **Hero Section**: Displays the Paulya logo and a subtitle.
+- **Project Description Section**: Describes the Paulya project with an image and text.
+- **Video Sections**: Showcases various performances with embedded YouTube videos.
+- **Photo Gallery Section**: Displays a collage of images.
+- **Footer Section**: Contains social media links and contact information.
+
+## Deployment
+
+This website is deployed on AWS using Lightsail.
+
+## Usage
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/pvulya1/paulya_website.git
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd paulya_website
+    ```
+
+3. Open `index.html` in your browser to view the website locally.
