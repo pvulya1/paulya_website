@@ -44,3 +44,48 @@ This website is deployed on AWS using Lightsail.
     ```
 
 3. Open `index.html` in your browser to view the website locally.
+
+## Deploying Website Files
+
+Step 1: Prepare the Server
+
+```sh
+# Create a temporary directory in your home folder
+mkdir -p ~/temp
+
+# Set permissions for the web directory
+sudo chown -R bitnami:bitnami /opt/bitnami/nginx/html/
+sudo chmod -R 755 /opt/bitnami/nginx/html/
+```
+
+Step 2: Upload Files (from your local machine)
+
+```sh
+# Option 1: Using SCP (run this on your local machine)
+scp -i your-key.pem -r /path/to/your/local/website/* bitnami@your-server-ip:~/temp/
+
+# Option 2: Using SFTP client like FileZilla
+# Connect to your server and upload files to ~/temp/
+```
+
+Step 3: Move Files to Web Directory
+
+```sh
+# Copy files from temp directory to web directory
+sudo cp -r ~/temp/* /opt/bitnami/nginx/html/
+
+# Set proper permissions
+sudo chown -R bitnami:bitnami /opt/bitnami/nginx/html/
+sudo chmod -R 755 /opt/bitnami/nginx/html/
+```
+
+Step 4: Restart Nginx
+
+```sh
+sudo /opt/bitnami/ctlscript.sh restart nginx
+# Verify Nginx is running
+sudo /opt/bitnami/ctlscript.sh status nginx
+```
+
+
+
